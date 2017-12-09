@@ -73,7 +73,7 @@ object frmMain: TfrmMain
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 482
+    Top = 481
     Width = 1004
     Height = 19
     Panels = <
@@ -106,7 +106,7 @@ object frmMain: TfrmMain
     Left = 0
     Top = 37
     Width = 215
-    Height = 445
+    Height = 444
     Align = alLeft
     DataSource = dsYd_Z
     PopupMenu = pmYd_Z
@@ -123,7 +123,7 @@ object frmMain: TfrmMain
     Left = 215
     Top = 37
     Width = 150
-    Height = 445
+    Height = 444
     Align = alLeft
     Caption = #36710#36742'/'#20154#21592
     TabOrder = 3
@@ -234,7 +234,7 @@ object frmMain: TfrmMain
       Left = 2
       Top = 361
       Width = 146
-      Height = 82
+      Height = 81
       Align = alClient
       DataSource = dsWorker
       PopupMenu = pmWorker
@@ -251,7 +251,7 @@ object frmMain: TfrmMain
     Left = 365
     Top = 37
     Width = 639
-    Height = 445
+    Height = 444
     Align = alClient
     Caption = #24050#35843#24230#20219#21153#20449#24687
     TabOrder = 4
@@ -259,7 +259,7 @@ object frmMain: TfrmMain
       Left = 2
       Top = 177
       Width = 635
-      Height = 266
+      Height = 265
       Align = alClient
       Caption = #24453#35843#24230#27744
       TabOrder = 0
@@ -600,14 +600,14 @@ object frmMain: TfrmMain
         Left = 2
         Top = 185
         Width = 631
-        Height = 79
+        Height = 78
         Align = alClient
         TabOrder = 1
         object dgWait_Sched: TDBGrid
           Left = 1
           Top = 1
           Width = 464
-          Height = 77
+          Height = 76
           Align = alLeft
           DataSource = dsWait_Sched
           ReadOnly = True
@@ -624,7 +624,7 @@ object frmMain: TfrmMain
           Left = 465
           Top = 1
           Width = 165
-          Height = 77
+          Height = 76
           Align = alClient
           DataSource = dsWait_Sched_Dtl
           ReadOnly = True

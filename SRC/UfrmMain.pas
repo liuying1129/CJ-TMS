@@ -249,7 +249,7 @@ begin
   LoadGroupName(ComboBox4,'select name from commcode where typename=''发货公司'' ');
   LoadGroupName(ComboBox5,'select name from commcode where typename=''发货公司'' ');
   
-  if IdleTrackerInit then TimerIdleTracker.Enabled:=true else TimerIdleTracker.Enabled:=false;//要用到ReadConfig中的LoginTime参数
+  TimerIdleTracker.Enabled:=true;//要用到ReadConfig中的LoginTime参数
   
   LoadToolMenu(N14,'select name from CommCode where TypeName=''工具菜单'' order by ID');
 end;
@@ -352,8 +352,8 @@ end;
 
 procedure TfrmMain.TimerIdleTrackerTimer(Sender: TObject);
 begin
-//自动弹出登录窗口
-  if(GetTickCount-IdleTrackerGetLastTickCount>LoginTime*1000)and(FindWindow(PCHAR('TfrmLogin'),PCHAR('登录'))=0) then
+  //自动弹出登录窗口
+  if (StopTime>LoginTime) and (FindWindow(PCHAR('TfrmLogin'),PCHAR('登录'))=0) then
     frmLogin.ShowModal;
 end;
 

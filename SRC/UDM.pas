@@ -103,9 +103,6 @@ function EnCryptStr(aStr: Pchar; aKey: Pchar): Pchar;stdcall;external 'DESCrypt.
 function CalParserValue(const CalExpress:Pchar;var ReturnValue:single):boolean;stdcall;external 'CalParser.dll';
 function GetBm(InputStr:PChar;sel:integer):PChar;STDCALL;external 'autowbpy.dll';
 function ShowOptionForm(const pCaption,pTabSheetCaption,pItemInfo,pInifile:Pchar):boolean;stdcall;external 'OptionSetForm.dll';
-Function IdleTrackerInit:boolean;stdcall;external 'IdleTrac.dll';//start the monitoring process
-Procedure IdleTrackerTerm;stdcall;external 'IdleTrac.dll';//stop the monitoring process
-Function IdleTrackerGetLastTickCount:Longint;stdcall;external 'IdleTrac.dll';//get the tick count of last user input
 //将计算项目增加或编辑到检验结果表中
 procedure addOrEditCalcItem(const Aadoconnstr:Pchar;const ComboItemID:Pchar;const checkunid: integer);stdcall;external 'CalcItemPro.dll';
 //将计算数据增加或编辑到检验结果表中
@@ -130,6 +127,7 @@ function MakeDBConn:boolean;
 procedure LoadGroupName(const comboBox:TcomboBox;const ASel:string);
 procedure MakeDBGridColumnsAutoFixItsWidth(objDBGrid:TDBGrid);
 function GetMaxCheckId(const ACombin_ID:string;const AServerDate:tdate):string;//获取指定工作组、日期的下一个联机号
+function StopTime: integer;//返回没有键盘和鼠标事件的时间
 
 implementation
 
@@ -712,6 +710,10 @@ begin
   newconnstr := newconnstr + 'data source=' + datasource + ';';
   newconnstr := newconnstr + 'Initial Catalog=' + initialcatalog + ';';
   newconnstr := newconnstr + 'provider=' + 'SQLOLEDB.1' + ';';
+  //Persist Security Info,表示ADO在数据库连接成功后是否保存密码信息
+  //ADO缺省为True,ADO.net缺省为False
+  //程序中会传ADOConnection信息给TADOLYQuery,故设置为True
+  newconnstr := newconnstr + 'Persist Security Info=True;';
   if ifIntegrated then
     newconnstr := newconnstr + 'Integrated Security=SSPI;';
   try
@@ -833,6 +835,16 @@ begin
   if(CheckId<>'')and(CheckId[length(CheckId)]=',')then CheckId:=copy(CheckId,1,length(CheckId)-1);
     
   result:=CheckId;
+end;
+
+function StopTime: integer;
+//返回没有键盘和鼠标事件的时间
+var
+  LInput: TLastInputInfo;
+begin
+  LInput.cbSize := SizeOf(TLastInputInfo);
+  GetLastInputInfo(LInput);
+  Result := (GetTickCount() - LInput.dwTime) div 1000;//微秒换成秒
 end;
 
 end.

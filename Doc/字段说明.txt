@@ -1,0 +1,48 @@
+调度主表
+向PDA下发标志(可下载)
+向PDA下发标志时间
+发提醒短信标志(已短信)
+发提醒短信时间
+
+
+人员基础资料表
+接收提醒短信号码
+
+
+下载的逻辑：
+select z.ydh
+from yd_z z
+where z.reserve='可下载'
+and z.Reserve9>getdate()-3
+and (dbo.uf_Concat_Driver(z.ydh) like '%陈启斌%' or dbo.uf_Concat_Psy(z.ydh) like '%陈启斌%')
+--and isnull((select top 1 yw.reserve from yd_worker yw where yw.pkunid in (select yb.unid from yd_bus yb where yb.ydh=z.ydh) and yw.Worker_Name='陈启斌'),'')<>'已下载'
+
+
+界面
+1、登录界面
+使用本地的人员记录进行登录。
+下载人员按钮
+
+2、调度号列表界面，显示该终端最近半个月的调度号。（自动删除以前的记录）
+下载按钮：按上面的逻辑判断哪些调度号是可以进行下载的并下载（已存在的则不需要下载）
+点击调度号进入到下一个界面
+
+3、客户+地址+货主列表，点击后进入下一个界面
+
+4、清单列表
+“当前客户+地址+货主”全部无异常签收
+点击进入商品明细列表
+
+4、商品明细列表
+"当前清单"全部无异常签收
+选择商品明细，进入下一个界面
+
+5、商品明细签收界面
+异常签收，选择异常原因（过收货时间、破损。。。），选择处理方法（退回。。。），数量
+
+
+
+
+
+
+

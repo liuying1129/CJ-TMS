@@ -47,9 +47,9 @@ object frmFeeInfo: TfrmFeeInfo
     Top = 64
     Width = 145
     Height = 21
-    EditLabel.Width = 65
+    EditLabel.Width = 190
     EditLabel.Height = 13
-    EditLabel.Caption = #29305#27530#21253#35013#36153
+    EditLabel.Caption = #29305#27530#21253#35013#36153'('#19978#33647'-'#20445#28201#31665#22238#25910#36153')'
     ImeName = #20013#25991'('#31616#20307') - '#19975#33021#20116#31508#36755#20837#27861
     TabOrder = 1
   end
@@ -96,29 +96,29 @@ object frmFeeInfo: TfrmFeeInfo
     TabOrder = 5
   end
   object LabeledEdit6: TLabeledEdit
-    Left = 48
+    Left = 12
     Top = 112
     Width = 121
     Height = 21
-    EditLabel.Width = 65
+    EditLabel.Width = 177
     EditLabel.Height = 13
-    EditLabel.Caption = #36229#36828#37197#36865#36153
+    EditLabel.Caption = #36229#36828#37197#36865#36153'('#19978#33647'-'#21306#22495#38468#21152#36153')'
     ImeName = #20013#25991'('#31616#20307') - '#19975#33021#20116#31508#36755#20837#27861
     TabOrder = 6
   end
   object LabeledEdit7: TLabeledEdit
-    Left = 184
+    Left = 204
     Top = 112
     Width = 121
     Height = 21
-    EditLabel.Width = 39
+    EditLabel.Width = 125
     EditLabel.Height = 13
-    EditLabel.Caption = #21152#28857#36153
+    EditLabel.Caption = #21152#28857#36153'('#19978#33647'-'#36215#36816#36153')'
     ImeName = #20013#25991'('#31616#20307') - '#19975#33021#20116#31508#36755#20837#27861
     TabOrder = 7
   end
   object LabeledEdit8: TLabeledEdit
-    Left = 352
+    Left = 381
     Top = 112
     Width = 121
     Height = 21
@@ -129,29 +129,29 @@ object frmFeeInfo: TfrmFeeInfo
     TabOrder = 8
   end
   object LabeledEdit9: TLabeledEdit
-    Left = 48
+    Left = 12
     Top = 160
     Width = 121
     Height = 21
-    EditLabel.Width = 39
+    EditLabel.Width = 138
     EditLabel.Height = 13
-    EditLabel.Caption = #20445#38505#36153
+    EditLabel.Caption = #20445#38505#36153'('#19978#33647'-'#36816#36153#21333#20215')'
     ImeName = #20013#25991'('#31616#20307') - '#19975#33021#20116#31508#36755#20837#27861
     TabOrder = 9
   end
   object LabeledEdit10: TLabeledEdit
-    Left = 184
+    Left = 204
     Top = 160
     Width = 121
     Height = 21
-    EditLabel.Width = 52
+    EditLabel.Width = 164
     EditLabel.Height = 13
-    EditLabel.Caption = #20854#23427#36153#29992
+    EditLabel.Caption = #20854#23427#36153#29992'('#19978#33647'-'#20919#29399#22238#25910#36153')'
     ImeName = #20013#25991'('#31616#20307') - '#19975#33021#20116#31508#36755#20837#27861
     TabOrder = 10
   end
   object LabeledEdit11: TLabeledEdit
-    Left = 352
+    Left = 381
     Top = 160
     Width = 121
     Height = 21
@@ -162,13 +162,13 @@ object frmFeeInfo: TfrmFeeInfo
     TabOrder = 11
   end
   object LabeledEdit12: TLabeledEdit
-    Left = 48
+    Left = 12
     Top = 200
     Width = 121
     Height = 21
-    EditLabel.Width = 26
+    EditLabel.Width = 112
     EditLabel.Height = 13
-    EditLabel.Caption = #36816#36153
+    EditLabel.Caption = #36816#36153'('#19978#33647'-'#24635#36153#29992')'
     ImeName = #20013#25991'('#31616#20307') - '#19975#33021#20116#31508#36755#20837#27861
     TabOrder = 12
   end

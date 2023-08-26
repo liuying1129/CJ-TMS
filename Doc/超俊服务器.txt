@@ -8,4 +8,3 @@ Cjadmin!@#
 
 sql server用户
 sa/ChaoJun2013
-liu/空密码--有密码时可能无法连接

@@ -210,7 +210,7 @@ var
 implementation
 
 uses UDM, UfrmCommCode, UfrmLogin, Ufrmdocset, UfrmBackBill, UfrmCommQuery,
-  UfrmHistCommQuery;
+  UfrmHistCommQuery, softMeter_globalVar;
 
 var
   ArCheckBoxValue:TArCheckBoxValue;
@@ -244,6 +244,10 @@ begin
   adoPrint.Connection := DM.ADOConnection1;
 
   ReadIni;
+  UpdateStatusBar(#$2+'6:'+SCSYDW);
+  UpdateStatusBar(#$2+'0:'+SYSNAME);
+  UpdateStatusBar(#$2+'8:'+gServerName);
+  UpdateStatusBar(#$2+'10:'+gDbName);
 
   UpdateAdoYd_Z;
   LoadGroupName(ComboBox4,'select name from commcode where typename=''发货公司'' ');
@@ -252,6 +256,9 @@ begin
   TimerIdleTracker.Enabled:=true;//要用到ReadConfig中的LoginTime参数
   
   LoadToolMenu(N14,'select name from CommCode where TypeName=''工具菜单'' order by ID');
+  
+  //用户在登录界面【退出】,该语句也会执行(出乎我的意料),此时operator_id为空
+  dllSoftMeter.sendPageview(PChar(ChangeFileExt(ExtractFileName(Application.ExeName),'')+'/'+UTF8Encode(SCSYDW)+'/'+UTF8Encode(operator_id)),'frmMain Show Event');
 end;
 
 procedure TfrmMain.UpdateStatusBar(const text: string);

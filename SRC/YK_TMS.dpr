@@ -11,7 +11,8 @@ uses
   UfrmCommQuery in 'UfrmCommQuery.pas' {frmCommQuery},
   UfrmHistCommQuery in 'UfrmHistCommQuery.pas' {frmHistCommQuery},
   UfrmExpSign in 'UfrmExpSign.pas' {frmExpSign},
-  UfrmFeeInfo in 'UfrmFeeInfo.pas' {frmFeeInfo};
+  UfrmFeeInfo in 'UfrmFeeInfo.pas' {frmFeeInfo},
+  softMeter_globalVar in 'softMeter_globalVar.pas';
 
 {$R *.res}
 

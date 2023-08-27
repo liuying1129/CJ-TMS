@@ -99,6 +99,20 @@ object frmMain: TfrmMain
         Width = 100
       end
       item
+        Width = 200
+      end
+      item
+        Text = #26381#21153#21517':'
+        Width = 47
+      end
+      item
+        Width = 150
+      end
+      item
+        Text = #25968#25454#24211':'
+        Width = 47
+      end
+      item
         Width = 50
       end>
   end
